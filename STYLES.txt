@@ -1,0 +1,91 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;500;600&display=swap');
+
+
+/* ===== AJUSTE GLOBAL PARA FOOTER ===== */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+
+  /* CLAVE */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* ===== FRANJA 1 (TÍTULO) ===== */
+.top-bar {
+  background: #f7b6c8; /* rosa pastel */
+  padding: 25px 10px;
+  text-align: center;
+}
+
+.top-bar h1 {
+  margin: 0;
+  color: white;
+  font-weight: 800;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+}
+
+
+/* ===== FRANJA 2 (MENÚ) ===== */
+.menu-bar {
+  background: #e89bb0; /* rosa más oscuro */
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 12px 10px;
+}
+
+.menu-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menu-bar a:hover {
+  opacity: 0.7;
+}
+
+
+/* ===== CONTENIDO ===== */
+.content {
+  text-align: center;
+  padding: 40px 20px;
+
+  /* CLAVE: empuja el footer abajo */
+  flex: 1;
+}
+
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #333;
+}
+
+.content p {
+  color: #666;
+  font-size: 16px;
+}
+
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: #888;
+  background: white;
+
+  /* opcional: puedes quitar este margin si quieres que quede más pegado */
+  margin-top: 40px;
+}

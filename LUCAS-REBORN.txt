@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Bebé Reborn Lucas</title>
+
+<meta property="og:title" content="Bebé Reborn Lucas">
+<meta property="og:image" content="https://flordealgodonreborn.netlify.app/img2.webp">
+<meta property="og:url" content="https://flordealgodonreborn.netlify.app/lucas-reborn.html">
+
+</head>
+<body>
+
+<h1>Bebé Reborn Lucas</h1>
+<img src="img2.webp" width="400" alt="Lucas reborn">
+
+<ul>
+<li>48 cm</li>
+<li>Pelo pintado</li>
+<li>Realismo extremo</li>
+</ul>
+
+<a href="https://wa.me/34657891235" target="_blank" rel="noopener noreferrer">
+💬 Consultar por WhatsApp
+</a>
+
+</body>
+</html>
