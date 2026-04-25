@@ -12,7 +12,6 @@ body {
   background: white;
   font-family: 'Poppins', sans-serif;
 
-  /* CLAVE */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -21,7 +20,7 @@ body {
 
 /* ===== FRANJA 1 (TÍTULO) ===== */
 .top-bar {
-  background: #f7b6c8; /* rosa pastel */
+  background: #f7b6c8;
   padding: 25px 10px;
   text-align: center;
 }
@@ -37,11 +36,14 @@ body {
 
 /* ===== FRANJA 2 (MENÚ) ===== */
 .menu-bar {
-  background: #e89bb0; /* rosa más oscuro */
+  background: #e89bb0;
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 12px 10px;
+
+  /* 🔧 añadido para evitar problemas con más enlaces */
+  flex-wrap: wrap;
 }
 
 .menu-bar a {
@@ -62,7 +64,6 @@ body {
   text-align: center;
   padding: 40px 20px;
 
-  /* CLAVE: empuja el footer abajo */
   flex: 1;
 }
 
@@ -85,7 +86,5 @@ footer {
   font-size: 13px;
   color: #888;
   background: white;
-
-  /* opcional: puedes quitar este margin si quieres que quede más pegado */
   margin-top: 40px;
 }
