@@ -31,32 +31,32 @@
   <div class="galeria-v2">
 
     <div class="card-galeria">
-      <img src="images/galeria/reborn1.webp" alt="Proceso pintura reborn" loading="lazy">
+      <img src="imagenes/galeria/reborn1.webp" alt="Proceso pintura reborn" loading="lazy">
       <h3>Proceso de pintura</h3>
       <p>Capas finas aplicadas a mano para realismo extremo</p>
     </div>
 
     <div class="card-galeria">
-      <img src="images/galeria/reborn2.webp" alt="Detalle manos reborn" loading="lazy">
+      <img src="imagenes/galeria/reborn2.webp" alt="Detalle manos reborn" loading="lazy">
       <h3>Detalle de manos</h3>
       <p>Textura y sombreado hiperrealista</p>
     </div>
 
     <div class="card-galeria">
-      <img src="images/galeria/reborn3.webp" alt="Bebé reborn terminado" loading="lazy">
+      <img src="imagenes/galeria/reborn3.webp" alt="Bebé reborn terminado" loading="lazy">
       <h3>Resultado final</h3>
       <p>Bebé reborn completamente terminado</p>
     </div>
 
     <div class="card-galeria">
-      <img src="images/galeria/reborn4.webp" alt="Detalle cara reborn" loading="lazy">
+      <img src="imagenes/galeria/reborn4.webp" alt="Detalle cara reborn" loading="lazy">
       <h3>Expresión facial</h3>
       <p>Detalle realista en ojos, labios y piel</p>
     </div>
 
     <!-- 🆕 NUEVA IMAGEN AÑADIDA -->
     <div class="card-galeria">
-      <img src="images/galeria/moteadodecolorrojo.webp" alt="Bebé reborn moteado rojo" loading="lazy">
+      <img src="imagenes/galeria/moteadodecolorrojo.webp" alt="Bebé reborn moteado rojo" loading="lazy">
       <h3>Reborn moteado rojo</h3>
       <p>Acabado artesanal con tonos realistas y detalles únicos</p>
     </div>
