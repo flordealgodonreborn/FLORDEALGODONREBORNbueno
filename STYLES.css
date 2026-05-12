@@ -28,7 +28,7 @@ body {
 
 .top-bar h1 {
   margin: 0;
-  color: white;
+  color: #fffffe;
   font-weight: 900;
   font-family: 'Playfair Display', serif;
   letter-spacing: 3px;
@@ -48,7 +48,7 @@ body {
 }
 
 .menu-bar a {
-  color: white;
+  color: #fffffe;
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 1px;
