@@ -21,7 +21,7 @@ body {
 
 /* ===== FRANJA 1 (TÍTULO) ===== */
 .top-bar {
-  background: #d07a91;
+  background: #e89bb0;
   padding: 25px 10px;
   text-align: center;
 }
@@ -37,7 +37,7 @@ body {
 
 /* ===== FRANJA 2 (MENÚ) ===== */
 .menu-bar {
-  background: #e89bb0;
+  background: #d07a91;
   display: flex;
   justify-content: center;
   gap: 40px;
