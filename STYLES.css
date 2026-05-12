@@ -10,7 +10,7 @@ html, body {
 
 body {
   margin: 0;
-  background: white;
+  background: #fffffe;
   font-family: 'Poppins', sans-serif;
 
   display: flex;
@@ -86,7 +86,7 @@ footer {
   padding: 20px;
   font-size: 13px;
   color: #888;
-  background: white;
+  background: #fffffe;
   margin-top: 40px;
 }
 
