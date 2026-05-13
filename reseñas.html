@@ -1,58 +1,183 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Reseñas</title>
+  <title>Valoración</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .bloque {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .opciones button {
+      margin: 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #eee;
+    }
+
+    .opciones button.selected {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .stars span {
+      font-size: 25px;
+      cursor: pointer;
+      color: gray;
+    }
+
+    .stars span.active {
+      color: gold;
+    }
+
+    button.enviar {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
+
 <body>
 
 <h2>Cuéntanos tu experiencia</h2>
 
 <form id="form">
 
-  <label>¿Cómo valoras la atención?</label>
-  <select id="atencion">
-    <option value="5">⭐⭐⭐⭐⭐</option>
-    <option value="4">⭐⭐⭐⭐</option>
-    <option value="3">⭐⭐⭐</option>
-    <option value="2">⭐⭐</option>
-    <option value="1">⭐</option>
-  </select><br><br>
+  <!-- Atención -->
+  <div class="bloque">
+    <p>¿Cómo valoras la atención recibida?</p>
+    <div class="opciones" data-name="atencion">
+      <button type="button">Excelente</button>
+      <button type="button">Muy buena</button>
+      <button type="button">Correcta</button>
+      <button type="button">Mejorable</button>
+      <button type="button">Mala</button>
+    </div>
+  </div>
 
-  <label>¿Se cumplió el plazo?</label>
-  <select id="plazo">
-    <option value="5">⭐⭐⭐⭐⭐</option>
-    <option value="4">⭐⭐⭐⭐</option>
-    <option value="3">⭐⭐⭐</option>
-    <option value="2">⭐⭐</option>
-    <option value="1">⭐</option>
-  </select><br><br>
+  <!-- Plazo -->
+  <div class="bloque">
+    <p>¿Se ha cumplido el plazo de entrega?</p>
+    <div class="opciones" data-name="plazo">
+      <button type="button">Perfectamente</button>
+      <button type="button">Casi perfecto</button>
+      <button type="button">Aceptable</button>
+      <button type="button">Con retraso</button>
+      <button type="button">No se cumplió</button>
+    </div>
+  </div>
 
-  <label>¿El resultado cumplió expectativas?</label>
-  <select id="resultado">
-    <option value="5">⭐⭐⭐⭐⭐</option>
-    <option value="4">⭐⭐⭐⭐</option>
-    <option value="3">⭐⭐⭐</option>
-    <option value="2">⭐⭐</option>
-    <option value="1">⭐</option>
-  </select><br><br>
+  <!-- Resultado -->
+  <div class="bloque">
+    <p>¿El resultado ha cumplido tus expectativas?</p>
+    <div class="opciones" data-name="resultado">
+      <button type="button">Ha superado mis expectativas</button>
+      <button type="button">Muy satisfactorio</button>
+      <button type="button">Tal como esperaba</button>
+      <button type="button">Por debajo de lo esperado</button>
+      <button type="button">No era lo esperado</button>
+    </div>
+  </div>
 
-  <label>Relación calidad-precio</label>
-  <select id="precio">
-    <option value="5">⭐⭐⭐⭐⭐</option>
-    <option value="4">⭐⭐⭐⭐</option>
-    <option value="3">⭐⭐⭐</option>
-    <option value="2">⭐⭐</option>
-    <option value="1">⭐</option>
-  </select><br><br>
+  <!-- Precio -->
+  <div class="bloque">
+    <p>¿Cómo valoras la relación calidad-precio?</p>
+    <div class="opciones" data-name="precio">
+      <button type="button">Excelente</button>
+      <button type="button">Muy buena</button>
+      <button type="button">Correcta</button>
+      <button type="button">Mejorable</button>
+      <button type="button">Mala</button>
+    </div>
+  </div>
 
-  <label>¿Qué mejorarías?</label>
-  <textarea id="mejora"></textarea><br><br>
+  <!-- Valoración final -->
+  <div class="bloque">
+    <p>En general, ¿qué te ha parecido la experiencia?</p>
+    <div class="stars" id="stars">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+  </div>
 
-  <button type="submit">Enviar</button>
+  <!-- Mejora -->
+  <div class="bloque">
+    <p>¿En qué crees que podríamos mejorar?</p>
+    <textarea id="mejora"></textarea>
+  </div>
+
+  <button class="enviar">Enviar valoración</button>
 
 </form>
 
 <script src="js/review.js"></script>
-  
+
+<script>
+let datos = {};
+
+// Botones tipo encuesta
+document.querySelectorAll(".opciones").forEach(grupo => {
+  grupo.querySelectorAll("button").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      grupo.querySelectorAll("button").forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+
+      const nombre = grupo.dataset.name;
+      datos[nombre] = 5 - index; // 5 a 1
+    });
+  });
+});
+
+// Estrellas
+let rating = 0;
+document.querySelectorAll("#stars span").forEach(star => {
+  star.addEventListener("click", () => {
+    rating = star.dataset.value;
+
+    document.querySelectorAll("#stars span").forEach(s => s.classList.remove("active"));
+
+    for (let i = 0; i < rating; i++) {
+      document.querySelectorAll("#stars span")[i].classList.add("active");
+    }
+  });
+});
+</script>
+
 </body>
 </html>
+``
