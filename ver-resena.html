@@ -1,42 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Reseña del cliente</title>
-  <style>
-    body {
-      font-family: Arial;
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .resena {
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
-<body>
-
-<h2>Reseña recibida 💬</h2>
-
-<div id="contenido" class="resena">
-  Cargando...
-</div>
-
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-// 🔥 IMPORTANTE: aquí pondremos acceso a tus datos después
-document.getElementById("contenido").innerHTML = `
-  <p><strong>ID:</strong> ${id}</p>
-  <p>⭐ Gracias por tu valoración</p>
-  <p>Tu opinión ha sido registrada correctamente ✅</p>
-`;
-</script>
+// 👇 PON AQUÍ TU URL REAL (sin tocar el ?id=)
+const URL = "https://script.google.com/macros/s/AKfycbyt9MEWWRjf8PDgPGP4vhO4pUois9i4bxFM4tx6nBsnLaXlNGrv1TQ83wr-Ccy-EeBwsw/exec" + id;
 
-</body>
-</html>
+fetch(URL)
+  .then(res => res.json())
+  .then(data => {
+
+    if (data.error) {
+      document.getElementById("contenido").innerHTML = "❌ Reseña no encontrada";
+      return;
+    }
+
+    let estrellas = "⭐".repeat(data.rating);
+
+    document.getElementById("contenido").innerHTML = `
+      <p><strong>Valoración:</strong> ${estrellas}</p>
+      <p><strong>Atención:</strong> ${data.atencion}</p>
+      <p><strong>Plazo:</strong> ${data.plazo}</p>
+      <p><strong>Resultado:</strong> ${data.resultado}</p>
+      <p><strong>Precio:</strong> ${data.precio}</p>
+      <p><strong>Comentario:</strong> ${data.mejora}</p>
+    `;
+  })
+  .catch(() => {
+    document.getElementById("contenido").innerHTML = "⚠️ Error cargando reseña";
+  });
+</script>
