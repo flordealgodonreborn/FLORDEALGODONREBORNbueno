@@ -52,7 +52,7 @@ document.getElementById("form").addEventListener("submit", function(e) {
   console.log("Datos a guardar:", dataFinal);
 
   // 👉 AQUÍ IRÁ TU URL DE GOOGLE SCRIPT
-  fetch("AQUI_PONES_TU_URL_DE_GOOGLE_SCRIPT", {
+  fetch("https://script.google.com/macros/s/AKfycbzmRu59vXA0gumVFxBEySuORvrVCu132UqIpUG61JjWtVbdv29SzeC2qYmEt0oUrpddlw/exec", {
     method: "POST",
     body: JSON.stringify(dataFinal)
   })
