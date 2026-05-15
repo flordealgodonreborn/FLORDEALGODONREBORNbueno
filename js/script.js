@@ -52,18 +52,19 @@ document.getElementById("form").addEventListener("submit", function(e) {
   console.log("Datos a guardar:", dataFinal);
 
   // 👉 AQUÍ IRÁ TU URL DE GOOGLE SCRIPT
-  fetch("https://script.google.com/macros/s/AKfycbzmRu59vXA0gumVFxBEySuORvrVCu132UqIpUG61JjWtVbdv29SzeC2qYmEt0oUrpddlw/exec", {
-    method: "POST",
-    body: JSON.stringify(dataFinal)
-  })
-  .then(() => {
-    alert("✅ ¡Gracias por tu valoración!");
 
-    // REDIRECCIÓN A LINK ÚNICO
-    window.location.href = "ver-resena.html?id=" + id;
-  })
-  .catch(() => {
-    alert("❌ Error al enviar la reseña");
-  });
-
+fetch("https://script.google.com/macros/s/AKfycbzmRu59vXA0gumVFxBEySuORvrVCu132UqIpUG61JjWtVbdv29SzeC2qYmEt0oUrpddlw/exec", {
+  method: "POST",
+  body: JSON.stringify(dataFinal),
+  headers: {
+    "Content-Type": "application/json"
+  }
+})
+.then(() => {
+  alert("✅ ¡Gracias por tu valoración!");
+  window.location.href = "ver-resena.html?id=" + dataFinal.id;
+})
+.catch(() => {
+  alert("❌ Error al enviar la reseña");
 });
+
