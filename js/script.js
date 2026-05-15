@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 let datos = {};
 let rating = 0;
 
@@ -36,7 +38,6 @@ document.getElementById("form").addEventListener("submit", function(e) {
     return;
   }
 
-  // ID único
   const id = Date.now();
 
   const dataFinal = {
@@ -49,22 +50,21 @@ document.getElementById("form").addEventListener("submit", function(e) {
     mejora: document.getElementById("mejora").value
   };
 
-  console.log("Datos a guardar:", dataFinal);
+  fetch("https://script.google.com/macros/s/AKfycbzmRu59vXA0gumVFxBEySuORvrVCu132UqIpUG61JjWtVbdv29SzeC2qYmEt0oUrpddlw/exec", {
+    method: "POST",
+    body: JSON.stringify(dataFinal),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(() => {
+    alert("✅ ¡Gracias por tu valoración!");
+    window.location.href = "ver-resena.html?id=" + id;
+  })
+  .catch(() => {
+    alert("❌ Error al enviar la reseña");
+  });
 
-  // 👉 AQUÍ IRÁ TU URL DE GOOGLE SCRIPT
-
-fetch("https://script.google.com/macros/s/AKfycbzmRu59vXA0gumVFxBEySuORvrVCu132UqIpUG61JjWtVbdv29SzeC2qYmEt0oUrpddlw/exec", {
-  method: "POST",
-  body: JSON.stringify(dataFinal),
-  headers: {
-    "Content-Type": "application/json"
-  }
-})
-.then(() => {
-  alert("✅ ¡Gracias por tu valoración!");
-  window.location.href = "ver-resena.html?id=" + dataFinal.id;
-})
-.catch(() => {
-  alert("❌ Error al enviar la reseña");
 });
 
+});
