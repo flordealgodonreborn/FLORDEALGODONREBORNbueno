@@ -15,7 +15,7 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-const URL = `TU_URL_DE_APPS_SCRIPT?id=${id}`;
+const URL = `https://script.google.com/macros/s/AKfycbyKqZeq11QBU1-dDso21OoMH7I6ykAD6ycU0v_vS3_LPUaV2DVP8SQ29xlGr96U4RL0sA/exec?id=${id}`;
 
 fetch(URL)
   .then(res => res.json())
