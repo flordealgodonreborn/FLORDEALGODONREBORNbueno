@@ -1,31 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ver reseña</title>
+</head>
+
+<body>
+
+<h1>Reseña</h1>
+
+<div id="contenido">Cargando...</div>
+
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-// 👇 PON AQUÍ TU URL REAL (sin tocar el ?id=)
-const URL = `https://script.google.com/macros/s/AKfycbyt9MEWWRjf8PDgPGP4vhO4pUois9i4bxFM4tx6nBsnLaXlNGrv1TQ83wr-Ccy-EeBwsw/exec?id=${id}`;
+const URL = `TU_URL_DE_APPS_SCRIPT?id=${id}`;
 
 fetch(URL)
   .then(res => res.json())
   .then(data => {
 
     if (data.error) {
-      document.getElementById("contenido").innerHTML = "❌ Reseña no encontrada";
+      document.getElementById("contenido").innerHTML = "❌ No encontrada";
       return;
     }
 
-    let estrellas = "⭐".repeat(data.rating);
-
     document.getElementById("contenido").innerHTML = `
-      <p><strong>Valoración:</strong> ${estrellas}</p>
-      <p><strong>Atención:</strong> ${data.atencion}</p>
-      <p><strong>Plazo:</strong> ${data.plazo}</p>
-      <p><strong>Resultado:</strong> ${data.resultado}</p>
-      <p><strong>Precio:</strong> ${data.precio}</p>
-      <p><strong>Comentario:</strong> ${data.mejora}</p>
+      <p><b>⭐ Rating:</b> ${"⭐".repeat(data.rating)}</p>
+      <p><b>Atención:</b> ${data.atencion}</p>
+      <p><b>Plazo:</b> ${data.plazo}</p>
+      <p><b>Resultado:</b> ${data.resultado}</p>
+      <p><b>Precio:</b> ${data.precio}</p>
+      <p><b>Comentario:</b> ${data.mejora}</p>
     `;
   })
-  .catch(() => {
-    document.getElementById("contenido").innerHTML = "⚠️ Error cargando reseña";
+  .catch(err => {
+    document.getElementById("contenido").innerHTML = "❌ Error cargando";
   });
 </script>
+
+</body>
+</html>
