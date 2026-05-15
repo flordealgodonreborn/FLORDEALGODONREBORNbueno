@@ -50,21 +50,25 @@ document.getElementById("form").addEventListener("submit", function(e) {
     mejora: document.getElementById("mejora").value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbzmRu59vXA0gumVFxBEySuORvrVCu132UqIpUG61JjWtVbdv29SzeC2qYmEt0oUrpddlw/exec", {
-    method: "POST",
-    body: JSON.stringify(dataFinal),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(() => {
+fetch("https://script.google.com/macros/s/AKfycbzmRu59vXA0gumVFxBEySuORvrVCu132UqIpUG61JjWtVbdv29SzeC2qYmEt0oUrpddlw/exec", {
+  method: "POST",
+  body: JSON.stringify(dataFinal),
+  headers: {
+    "Content-Type": "application/json"
+  }
+})
+.then(response => response.text())
+.then(res => {
+  console.log("Respuesta servidor:", res);
+
+  if (res === "OK") {
     alert("✅ ¡Gracias por tu valoración!");
     window.location.href = "ver-resena.html?id=" + id;
-  })
-  .catch(() => {
-    alert("❌ Error al enviar la reseña");
-  });
-
-});
-
+  } else {
+    alert("❌ Error al guardar");
+  }
+})
+.catch(err => {
+  console.error(err);
+  alert("❌ Error al enviar la reseña");
 });
