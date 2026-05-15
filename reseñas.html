@@ -60,3 +60,92 @@
       padding: 12px;
       font-size: 16px;
       background: black;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Cuéntanos tu experiencia</h2>
+
+<form id="form">
+
+  <!-- Atención -->
+  <div class="bloque">
+    <p>¿Cómo valoras la atención recibida?</p>
+    <div class="opciones" data-name="atencion">
+      <button type="button">Excelente</button>
+      <button type="button">Muy buena</button>
+      <button type="button">Correcta</button>
+      <button type="button">Mejorable</button>
+      <button type="button">Mala</button>
+    </div>
+  </div>
+
+  <!-- Plazo -->
+  <div class="bloque">
+    <p>¿Se ha cumplido el plazo de entrega?</p>
+    <div class="opciones" data-name="plazo">
+      <button type="button">Perfectamente</button>
+      <button type="button">Casi perfecto</button>
+      <button type="button">Aceptable</button>
+      <button type="button">Con retraso</button>
+      <button type="button">No se cumplió</button>
+    </div>
+  </div>
+
+  <!-- Resultado -->
+  <div class="bloque">
+    <p>¿El resultado ha cumplido tus expectativas?</p>
+    <div class="opciones" data-name="resultado">
+      <button type="button">Ha superado mis expectativas</button>
+      <button type="button">Muy satisfactorio</button>
+      <button type="button">Tal como esperaba</button>
+      <button type="button">Por debajo de lo esperado</button>
+      <button type="button">No era lo esperado</button>
+    </div>
+  </div>
+
+  <!-- Precio -->
+  <div class="bloque">
+    <p>¿Cómo valoras la relación calidad-precio?</p>
+    <div class="opciones" data-name="precio">
+      <button type="button">Excelente</button>
+      <button type="button">Muy buena</button>
+      <button type="button">Correcta</button>
+      <button type="button">Mejorable</button>
+      <button type="button">Mala</button>
+    </div>
+  </div>
+
+  <!-- Estrellas -->
+  <div class="bloque">
+    <p>En general, ¿qué te ha parecido la experiencia?</p>
+    <div class="stars" id="stars">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+  </div>
+
+  <!-- Comentario -->
+  <div class="bloque">
+    <p>¿En qué crees que podríamos mejorar?</p>
+    <textarea id="mejora"></textarea>
+  </div>
+
+  <button class="enviar">Enviar valoración</button>
+
+</form>
+
+<!-- ✅ SOLO ESTE SCRIPT -->
+<script src="./js/script.js"></script>
+
+</body>
+</html>
