@@ -43,7 +43,7 @@ document.getElementById("form").addEventListener("submit", function(e) {
     plazo: datos.plazo || "",
     resultado: datos.resultado || "",
     precio: datos.precio || "",
-    rating,
+    rating: datos.precio || "",
     mejora: document.getElementById("mejora").value
   };
 
