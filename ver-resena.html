@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reseña del cliente</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .resena {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<h2>Reseña recibida 💬</h2>
+
+<div id="contenido" class="resena">
+  Cargando...
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+// 🔥 IMPORTANTE: aquí pondremos acceso a tus datos después
+document.getElementById("contenido").innerHTML = `
+  <p><strong>ID:</strong> ${id}</p>
+  <p>⭐ Gracias por tu valoración</p>
+  <p>Tu opinión ha sido registrada correctamente ✅</p>
+`;
+</script>
+
+</body>
+</html>
