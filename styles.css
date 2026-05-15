@@ -98,7 +98,8 @@ footer {
 .galeria-v2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 6.25%;
+  padding: 0 6.25%;
   margin-top: 30px;
 }
 
@@ -138,18 +139,25 @@ footer {
 
 /* RESPONSIVE GALERÍA */
 
+/* 📱 móvil (base) */
+.galeria-v2 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* 📲 tablet */
 @media (min-width: 600px) {
   .galeria-v2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* 🖥️ ordenador */
 @media (min-width: 1000px) {
   .galeria-v2 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 
 /* LIGHTBOX (ZOOM IMAGEN) */
 
