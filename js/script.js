@@ -36,7 +36,11 @@ document.getElementById("form").addEventListener("submit", function(e) {
     return;
   }
 
+  // ID único
+  const id = Date.now();
+
   const dataFinal = {
+    id: id,
     atencion: datos.atencion,
     plazo: datos.plazo,
     resultado: datos.resultado,
@@ -45,9 +49,21 @@ document.getElementById("form").addEventListener("submit", function(e) {
     mejora: document.getElementById("mejora").value
   };
 
-  console.log("Datos que se enviarían:", dataFinal);
+  console.log("Datos a guardar:", dataFinal);
 
-  alert("✅ ¡Gracias por tu valoración!");
+  // 👉 AQUÍ IRÁ TU URL DE GOOGLE SCRIPT
+  fetch("AQUI_PONES_TU_URL_DE_GOOGLE_SCRIPT", {
+    method: "POST",
+    body: JSON.stringify(dataFinal)
+  })
+  .then(() => {
+    alert("✅ ¡Gracias por tu valoración!");
 
-  document.getElementById("form").reset();
+    // REDIRECCIÓN A LINK ÚNICO
+    window.location.href = "ver-resena.html?id=" + id;
+  })
+  .catch(() => {
+    alert("❌ Error al enviar la reseña");
+  });
+
 });
