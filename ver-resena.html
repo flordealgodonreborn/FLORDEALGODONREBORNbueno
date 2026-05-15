@@ -3,7 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
 // 👇 PON AQUÍ TU URL REAL (sin tocar el ?id=)
-const URL = "https://script.google.com/macros/s/AKfycbyt9MEWWRjf8PDgPGP4vhO4pUois9i4bxFM4tx6nBsnLaXlNGrv1TQ83wr-Ccy-EeBwsw/exec" + id;
+const URL = `https://script.google.com/macros/s/AKfycbyt9MEWWRjf8PDgPGP4vhO4pUois9i4bxFM4tx6nBsnLaXlNGrv1TQ83wr-Ccy-EeBwsw/exec?id=${id}`;
 
 fetch(URL)
   .then(res => res.json())
