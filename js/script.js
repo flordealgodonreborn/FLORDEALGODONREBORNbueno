@@ -47,7 +47,7 @@ document.getElementById("form").addEventListener("submit", function(e) {
     mejora: document.getElementById("mejora").value
   };
 
-  fetch("TU_URL_DE_APPS_SCRIPT", {
+  fetch("https://script.google.com/macros/s/AKfycbyKqZeq11QBU1-dDso21OoMH7I6ykAD6ycU0v_vS3_LPUaV2DVP8SQ29xlGr96U4RL0sA/exec", {
     method: "POST",
     body: JSON.stringify(dataFinal),
     headers: {
