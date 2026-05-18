@@ -20,7 +20,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f2f2f2;
+    background: #e9ecef;
     color: #111;
     line-height: 1.8;
 }
@@ -29,16 +29,17 @@ body {
 article {
     max-width: 850px;
     margin: 40px auto;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     background: white;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* HEADER */
+/* HEADER (AHORA DESTACA) */
 header {
-    padding: 35px;
-    border-bottom: 1px solid #e6e6e6;
+    padding: 40px;
+    background: #dfeee7; /* verde más fuerte */
+    border-bottom: 2px solid #c8e0d6;
 }
 
 h1 {
@@ -48,12 +49,21 @@ h1 {
 
 header p {
     margin-top: 10px;
-    color: #444;
+    color: #2f4f4f;
 }
 
 /* SECCIONES */
 section {
     padding: 30px 35px;
+}
+
+/* FRANJAS CLARAS ENTRE SECCIONES */
+section:nth-of-type(odd) {
+    background: #ffffff;
+}
+
+section:nth-of-type(even) {
+    background: #eaf4ef;
 }
 
 /* TITULOS */
@@ -71,18 +81,18 @@ p {
 
 /* LISTAS */
 ul {
-    margin-left: 20px;
+    margin-left: 22px;
     margin-bottom: 12px;
 }
 
-/* BLOQUES ALTERNOS (CLAVE) */
+/* ✅ BLOQUES INTERNOS TIPO REVISTA */
 section p,
 section ul {
-    padding: 15px;
+    padding: 14px;
     border-radius: 6px;
 }
 
-/* Alternancia tipo revista */
+/* Alternancia interna */
 section p:nth-of-type(odd),
 section ul:nth-of-type(odd) {
     background: #ffffff;
@@ -90,7 +100,7 @@ section ul:nth-of-type(odd) {
 
 section p:nth-of-type(even),
 section ul:nth-of-type(even) {
-    background: #eef5f0; /* verde suave */
+    background: #eef5f0;
 }
 
 /* IMAGEN */
@@ -111,16 +121,16 @@ a {
         padding: 20px;
     }
 
+    header {
+        padding: 25px;
+    }
+
     h1 {
         font-size: 1.6em;
     }
 
     h2 {
         font-size: 1.2em;
-    }
-
-    body {
-        font-size: 15px;
     }
 }
 
@@ -156,3 +166,84 @@ Se trata de piezas realizadas manualmente, donde cada ejemplar presenta variacio
 <h2>Origen e historia</h2>
 
 <p>
+El origen del bebé reborn no está completamente definido. Existe un relato extendido que sitúa antecedentes en la Europa de posguerra, donde se reutilizaban muñecas dañadas por necesidad.
+</p>
+
+<p>
+Este relato forma parte de la tradición del movimiento, aunque no está plenamente documentado como origen directo.
+</p>
+
+<p>
+Según Encyclopaedia Britannica, el movimiento moderno se consolida en los años 90 en Estados Unidos, cuando artistas comienzan a transformar muñecas industriales en piezas hiperrealistas.
+</p>
+
+</section>
+
+<section>
+<h2>El movimiento en los años 90</h2>
+
+<ul>
+    <li>Eliminación de pintura original</li>
+    <li>Reaplicación de capas de pintura</li>
+    <li>Creación de detalles anatómicos</li>
+    <li>Implantación de cabello manual</li>
+    <li>Inserción de peso interno</li>
+</ul>
+
+<p>
+El término reborn hace referencia a la transformación de una muñeca industrial en una pieza completamente nueva.
+</p>
+
+</section>
+
+<section>
+<h2>Expansión internacional</h2>
+
+<p>
+Con la llegada de Internet, el fenómeno se expande a nivel global durante los años 2000. Europa y España adoptan esta práctica dentro de contextos de artesanía y coleccionismo.
+</p>
+
+<p>
+El desarrollo de comunidades online permite la difusión de técnicas y la creación de un mercado especializado.
+</p>
+
+</section>
+
+<section>
+<h2>Evolución técnica</h2>
+
+<ul>
+    <li>Capas de pintura más complejas</li>
+    <li>Mayor nivel de detalle en la piel</li>
+    <li>Cabello implantado manualmente</li>
+    <li>Uso de materiales avanzados</li>
+</ul>
+
+</section>
+
+<section>
+<h2>Significado actual</h2>
+
+<p>
+En la actualidad, los bebés reborn se interpretan como objetos de colección, piezas artísticas y, en algunos casos, elementos con valor emocional.
+</p>
+
+<p>
+Su importancia no reside únicamente en el realismo técnico, sino también en la relación subjetiva que cada persona establece con la pieza.
+</p>
+
+</section>
+
+<section>
+<h2>Conclusión</h2>
+
+<p>
+El bebé reborn representa la evolución de una técnica artesanal que ha derivado en un fenómeno artístico y cultural contemporáneo.
+</p>
+
+</section>
+
+</article>
+
+</body>
+</html>
