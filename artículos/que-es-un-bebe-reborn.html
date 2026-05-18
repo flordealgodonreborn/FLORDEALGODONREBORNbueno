@@ -7,6 +7,7 @@
 
 <title>Qué es un bebé reborn</title>
 
+<!-- ✅ Fuente bien importada -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -20,28 +21,32 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #e9ecef;
+    background: #f8f8f6; /* blanco roto */
     color: #111;
     line-height: 1.8;
 }
 
-/* CONTENEDOR */
+/* ✅ CONTENEDOR SIN EFECTO TARJETA */
 article {
-    max-width: 850px;
-    margin: 40px auto;
-    border-radius: 12px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 100%;
+    margin: 0;
+    background: transparent;
 }
 
-/* HEADER (AHORA DESTACA) */
+/* ✅ HEADER MÁS SUAVE Y TRANSLÚCIDO */
 header {
-    padding: 40px;
-    background: #dfeee7; /* verde más fuerte */
-    border-bottom: 2px solid #c8e0d6;
+    padding: 50px 20px;
+    background: rgba(220, 230, 225, 0.65); /* verde suave translúcido */
 }
 
+/* ✅ CENTRAR CONTENIDO */
+header,
+section {
+    max-width: 850px;
+    margin: auto;
+}
+
+/* TITULO */
 h1 {
     font-size: 2em;
     font-weight: 600;
@@ -49,21 +54,21 @@ h1 {
 
 header p {
     margin-top: 10px;
-    color: #2f4f4f;
+    color: #4a5f5c;
 }
 
-/* SECCIONES */
+/* ✅ FRANJAS COMPLETAS */
 section {
-    padding: 30px 35px;
+    padding: 50px 20px;
 }
 
-/* FRANJAS CLARAS ENTRE SECCIONES */
+/* ✅ ALTERNANCIA CLARA */
 section:nth-of-type(odd) {
     background: #ffffff;
 }
 
 section:nth-of-type(even) {
-    background: #eaf4ef;
+    background: #edf3ef;
 }
 
 /* TITULOS */
@@ -75,32 +80,14 @@ h2 {
 
 /* TEXTO */
 p {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     text-align: justify;
 }
 
 /* LISTAS */
 ul {
-    margin-left: 22px;
-    margin-bottom: 12px;
-}
-
-/* ✅ BLOQUES INTERNOS TIPO REVISTA */
-section p,
-section ul {
-    padding: 14px;
-    border-radius: 6px;
-}
-
-/* Alternancia interna */
-section p:nth-of-type(odd),
-section ul:nth-of-type(odd) {
-    background: #ffffff;
-}
-
-section p:nth-of-type(even),
-section ul:nth-of-type(even) {
-    background: #eef5f0;
+    margin-left: 20px;
+    margin-bottom: 14px;
 }
 
 /* IMAGEN */
@@ -117,20 +104,20 @@ a {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    section {
-        padding: 20px;
-    }
-
-    header {
-        padding: 25px;
-    }
-
     h1 {
         font-size: 1.6em;
     }
 
     h2 {
         font-size: 1.2em;
+    }
+
+    section {
+        padding: 35px 15px;
+    }
+
+    header {
+        padding: 35px 15px;
     }
 }
 
@@ -147,6 +134,7 @@ a {
     <p>Descripción histórica, técnica y cultural del fenómeno reborn</p>
 </header>
 
+<!-- ✅ Imagen como franja -->
 <img src="imagenes/bebe-reborn.jpg" alt="Bebé reborn hiperrealista">
 
 <section>
