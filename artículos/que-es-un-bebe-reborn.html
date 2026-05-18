@@ -11,6 +11,7 @@
 
 <style>
 
+/* BASE */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,70 +20,69 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f4f6f8;
-    color: #2b2b2b;
-    line-height: 1.85;
+    background: #f2f2f2;
+    color: #111;
+    line-height: 1.8;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
 article {
     max-width: 850px;
     margin: 40px auto;
-    background: white;
-    border-radius: 14px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    background: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 
 /* HEADER */
 header {
-    padding: 40px 35px;
-    background: #ffffff;
-    border-bottom: 1px solid #eee;
+    padding: 35px;
+    background: white;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 h1 {
-    font-size: 2.1em;
-    margin-bottom: 10px;
+    font-size: 2em;
+    font-weight: 600;
 }
 
 header p {
-    color: #555;
-    font-style: italic;
+    margin-top: 10px;
+    color: #444;
 }
 
-/* SECCIONES CON ALTERNANCIA */
+/* SECCIONES */
 section {
-    padding: 35px;
+    padding: 30px 35px;
 }
 
-/* alternancia visual */
+/* ALTERNANCIA FORMAL */
 section:nth-of-type(odd) {
     background: #ffffff;
 }
 
 section:nth-of-type(even) {
-    background: #f3f6fa;
+    background: #f6f6f6;
 }
 
 /* TITULOS */
 h2 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-bottom: 15px;
-    padding-left: 12px;
-    border-left: 4px solid #e91e63;
+    font-weight: 600;
 }
 
-/* PÁRRAFOS */
+/* TEXTO */
 p {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     text-align: justify;
 }
 
 /* LISTAS */
 ul {
     margin-left: 22px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 /* IMAGEN */
@@ -93,41 +93,28 @@ img {
 
 /* ENLACES */
 a {
-    color: #e91e63;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-a:hover {
+    color: #000;
     text-decoration: underline;
 }
 
-/* BLOQUE DESTACADO SUAVE */
-.highlight {
-    background: rgba(233, 30, 99, 0.08);
-    padding: 18px;
-    border-left: 4px solid #e91e63;
-    margin: 18px 0;
-    border-radius: 8px;
-}
-
-/* BLOQUE INFORMACIÓN NEUTRO */
-.note {
-    background: rgba(63, 81, 181, 0.08);
-    padding: 18px;
-    border-left: 4px solid #3f51b5;
-    margin: 18px 0;
-    border-radius: 8px;
+/* SIN NEGRITAS DECORATIVAS */
+strong {
+    font-weight: 600;
+    color: #111;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     section {
-        padding: 22px;
+        padding: 20px;
     }
 
     h1 {
-        font-size: 1.7em;
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.2em;
     }
 }
 
@@ -141,7 +128,7 @@ a:hover {
 
 <header>
     <h1>Qué es un bebé reborn: guía completa</h1>
-    <p>Una exploración histórica, técnica y cultural del fenómeno reborn</p>
+    <p>Descripción histórica, técnica y cultural del fenómeno reborn</p>
 </header>
 
 <img src="imagenes/bebe-reborn.jpg" alt="Bebé reborn hiperrealista">
@@ -150,14 +137,12 @@ a:hover {
 <h2>Qué es un bebé reborn</h2>
 
 <p>
-El bebé reborn es una muñeca artesanal creada en vinilo o silicona con el objetivo de reproducir con precisión extrema la apariencia de un recién nacido.
+El bebé reborn es una muñeca artesanal fabricada en vinilo o silicona con el objetivo de reproducir la apariencia de un recién nacido con alto nivel de realismo.
 </p>
 
-<div class="highlight">
 <p>
-<strong>Clave:</strong> no es un juguete industrial, sino una pieza artística creada manualmente.
+Se trata de piezas realizadas manualmente, donde cada ejemplar presenta variaciones propias debido a su proceso artesanal.
 </p>
-</div>
 
 </section>
 
@@ -165,17 +150,15 @@ El bebé reborn es una muñeca artesanal creada en vinilo o silicona con el obje
 <h2>Origen e historia</h2>
 
 <p>
-Existe un relato que sitúa antecedentes en la Europa de posguerra, donde se reutilizaban muñecas dañadas por necesidad.
+El origen del bebé reborn no está completamente definido. Existe un relato extendido que sitúa antecedentes en la Europa de posguerra, donde se reutilizaban muñecas dañadas por necesidad.
 </p>
 
-<div class="note">
 <p>
-Este relato es parte de la tradición del movimiento, pero no está completamente documentado como origen histórico directo.
+Este relato forma parte de la tradición del movimiento, aunque no está plenamente documentado como origen directo.
 </p>
-</div>
 
 <p>
-Según <a href="https://www.britannica.com">Encyclopaedia Britannica</a>, el movimiento moderno se consolida en los años 90 en Estados Unidos.
+Según Encyclopaedia Britannica, el movimiento moderno se consolida en los años 90 en Estados Unidos, cuando artistas comienzan a transformar muñecas industriales en piezas hiperrealistas.
 </p>
 
 </section>
@@ -185,14 +168,14 @@ Según <a href="https://www.britannica.com">Encyclopaedia Britannica</a>, el mov
 
 <ul>
     <li>Eliminación de pintura original</li>
-    <li>Capas de pintura realista</li>
-    <li>Detalles anatómicos</li>
-    <li>Implante de cabello manual</li>
-    <li>Pesado interno realista</li>
+    <li>Reaplicación de capas de pintura</li>
+    <li>Creación de detalles anatómicos</li>
+    <li>Implantación de cabello manual</li>
+    <li>Inserción de peso interno</li>
 </ul>
 
 <p>
-El concepto “reborn” hace referencia a la idea de una muñeca que “renace” como pieza artística.
+El término reborn hace referencia a la transformación de una muñeca industrial en una pieza completamente nueva.
 </p>
 
 </section>
@@ -201,14 +184,24 @@ El concepto “reborn” hace referencia a la idea de una muñeca que “renace�
 <h2>Expansión internacional</h2>
 
 <p>
-Con Internet, el fenómeno se expande globalmente. Europa y España adoptan la técnica y la transforman en comunidad artística.
+Con la llegada de Internet, el fenómeno se expande a nivel global durante los años 2000. Europa y España adoptan esta práctica dentro de contextos de artesanía y coleccionismo.
 </p>
 
-<div class="highlight">
 <p>
-El reborn pasa de técnica artesanal a ecosistema global con artistas, coleccionistas y mercado propio.
+El desarrollo de comunidades online permite la difusión de técnicas y la creación de un mercado especializado.
 </p>
-</div>
+
+</section>
+
+<section>
+<h2>Evolución técnica</h2>
+
+<ul>
+    <li>Capas de pintura más complejas</li>
+    <li>Mayor nivel de detalle en la piel</li>
+    <li>Cabello implantado manualmente</li>
+    <li>Uso de materiales avanzados</li>
+</ul>
 
 </section>
 
@@ -216,14 +209,12 @@ El reborn pasa de técnica artesanal a ecosistema global con artistas, coleccion
 <h2>Significado actual</h2>
 
 <p>
-Hoy el reborn se entiende como arte, coleccionismo y fenómeno cultural.
+En la actualidad, los bebés reborn se interpretan como objetos de colección, piezas artísticas y, en algunos casos, elementos con valor emocional.
 </p>
 
-<div class="note">
 <p>
-Su valor no está solo en el realismo técnico, sino en la experiencia emocional y estética que genera.
+Su importancia no reside únicamente en el realismo técnico, sino también en la relación subjetiva que cada persona establece con la pieza.
 </p>
-</div>
 
 </section>
 
@@ -231,7 +222,7 @@ Su valor no está solo en el realismo técnico, sino en la experiencia emocional
 <h2>Conclusión</h2>
 
 <p>
-El bebé reborn es el resultado de una evolución entre técnica artesanal, hiperrealismo y cultura contemporánea.
+El bebé reborn representa la evolución de una técnica artesanal que ha derivado en un fenómeno artístico y cultural contemporáneo.
 </p>
 
 </section>
