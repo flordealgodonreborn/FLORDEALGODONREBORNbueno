@@ -180,3 +180,45 @@ footer {
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
+
+
+* =====================================================
+   🔥 BOTÓN WHATSAPP (AÑADIDO SIN TOCAR NADA ORIGINAL)
+===================================================== */
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 20px;
+  padding: 12px 22px;
+
+  background-color: #25D366; /* verde WhatsApp */
+  color: #fff;
+
+  border-radius: 30px; /* forma tipo burbuja */
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+
+  transition: all 0.3s ease;
+}
+
+/* icono dentro del botón */
+.btn-whatsapp img {
+  width: 18px;
+  height: 18px;
+}
+
+/* efecto al pasar el ratón */
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+/* efecto al hacer clic */
+.btn-whatsapp:active {
+  transform: translateY(0);
+}
