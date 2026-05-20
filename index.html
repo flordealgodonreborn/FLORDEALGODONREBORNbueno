@@ -1,61 +1,27 @@
 <!DOCTYPE html>
-<!--
-  Indica que el documento usa HTML5.
-  Es obligatorio para que los navegadores funcionen correctamente.
--->
 <html lang="es">
-<!--
-  lang="es" indica que el idioma principal del contenido es español.
-  Esto ayuda a Google y a lectores de accesibilidad.
--->
 <head>
-
-  <!-- Codificación de caracteres -->
-  <!-- Permite mostrar bien acentos, ñ, etc. -->
   <meta charset="UTF-8">
-
-  <!-- Responsive / móviles -->
-  <!-- Hace que la web se adapte a móviles y tablets -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- TÍTULO SEO -->
-  <!-- Es lo que aparece en Google y en la pestaña del navegador -->
   <title>Flor de Algodón Reborn | Bebés Reborn Artesanales Hechos a Mano</title>
-
-  <!-- META DESCRIPTION -->
-  <!-- Texto descriptivo que aparece debajo del título en Google -->
-  <!-- No posiciona, pero aumenta los clics -->
   <meta name="description" content="Flor de Algodón Reborn crea bebés reborn artesanales únicos, hechos a mano con máximo realismo, amor y cuidado en cada detalle.">
-
-  <!-- CANONICAL -->
-  <!-- Indica a Google cuál es la URL oficial de esta página -->
-  <!-- MUY importante tras cambiar de dominio -->
   <link rel="canonical" href="https://flordealgodonreborn.com/">
 
-  <!-- OPEN GRAPH (redes sociales) -->
-  <!-- Controla cómo se ve la web al compartirla en WhatsApp, Facebook, etc. -->
   <meta property="og:title" content="Flor de Algodón Reborn">
   <meta property="og:description" content="Bebés reborn artesanales únicos hechos a mano con realismo extremo y delicadeza.">
   <meta property="og:url" content="https://flordealgodonreborn.com/">
   <meta property="og:type" content="website">
-  <!-- Imagen opcional para redes (cuando tengas una) -->
-  <!-- <meta property="og:image" content="https://flordealgodonreborn.com/img/preview.jpg"> -->
 
-  <!-- ENLACE AL CSS -->
-  <!-- Esto mantiene todo tu diseño, colores y estructura -->
-  <link rel="stylesheet" 
-    href="styles.css">
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- FRANJA 1: TÍTULO (RESPETA TU CSS .top-bar) -->
 <header class="top-bar">
   <h1>FLOR DE ALGODÓN REBORN</h1>
 </header>
 
-<!-- FRANJA 2: MENÚ (RESPETA TU CSS .menu-bar) -->
 <nav class="menu-bar">
   <a href="index.html">INICIO</a>
   <a href="galeria.html">GALERÍA</a>
@@ -64,32 +30,37 @@
   <a href="contacto.html">CONTACTO</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <img src="img/bebe-principal.jpg" alt="Bebé reborn hiperrealista dormido con textura de piel real">
+  <img
+    src="img/bebe-principal.jpg"
+    width="1600"
+    height="1000"
+    decoding="async"
+    alt="Bebé reborn hiperrealista dormido con textura de piel real"
+  >
+
   <div class="hero-text">
     <h2>Una mirada, un sentimiento, una ilusión.</h2>
     <p>No es solo un reborn. Es vida en forma de arte.</p>
-<a href="https://wa.me/346XXXXXXXX?text=Hola,%20he%20visto%20vuestros%20beb%C3%A9s%20reborn%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n" class="btn-whatsapp">
-  <img src="img/whatsapp-icon.png" alt="WhatsApp">
-  Consultar por WhatsApp
-</a>
 
-
+    <a href="https://wa.me/346XXXXXXXX?text=Hola,%20he%20visto%20vuestros%20beb%C3%A9s%20reborn%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n" class="btn-whatsapp">
+      <img src="img/whatsapp-icon.png" alt="WhatsApp" width="24" height="24" loading="lazy">
+      Consultar por WhatsApp
+    </a>
   </div>
 </section>
-  
-<!-- CONTENIDO (RESPETA TU CSS .content) -->
-  <section class="content">
+
+<section class="content">
   <p>
     Cada bebé reborn es una pieza única creada artesanalmente, cuidando cada detalle para transmitir emoción, realismo y conexión.
   </p>
 </section>
 
-<!-- FOOTER (RESPETA TU CSS GLOBAL) -->
 <footer>
-© 2026 Flor de Algodón Reborn. Todos los derechos reservados.
+  © 2026 Flor de Algodón Reborn. Todos los derechos reservados.
 </footer>
 
+</body>
+</html>
 </body>
 </html>
