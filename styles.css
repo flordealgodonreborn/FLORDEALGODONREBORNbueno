@@ -2,23 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@300;500;600&display=swap');
 
 
-/* ===== AJUSTE GLOBAL PARA FOOTER ===== */
+/* ===== AJUSTE GLOBAL ===== */
 html, body {
   height: 100%;
 }
 
 body {
   margin: 0;
-  background: linear-gradient(#ffffff, #fdf6f8); /* ✅ más cálido */
+  background: linear-gradient(to bottom, #ffffff, #fdf6f8);
   font-family: 'Poppins', sans-serif;
-  
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 
-/* ===== FRANJA 1 (TÍTULO - EMOCIONAL) ===== */
+/* ===== TOP BAR (EMOCIONAL) ===== */
 .top-bar {
   background: linear-gradient(135deg, #A29BFE, #C7C3FF);
   padding: 60px 10px;
@@ -34,16 +33,15 @@ body {
 }
 
 
-/* ===== FRANJA 2 (MENÚ - ACCIÓN) ===== */
+/* ===== MENU (ACCIÓN + DIRECCIÓN) ===== */
 .menu-bar {
-  background: #5A54E8;
+  background: linear-gradient(to right, #5A54E8, #6C63FF);
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 12px 10px;
   flex-wrap: wrap;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ✅ separa visualmente */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .menu-bar a {
@@ -51,10 +49,39 @@ body {
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 2px;
+  position: relative;
+  transition: all 0.25s ease;
 }
 
+/* línea animada */
+.menu-bar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+/* hover */
 .menu-bar a:hover {
-  color: #C7C3FF; /* ✅ feedback visual */
+  transform: translateY(-2px);
+}
+
+.menu-bar a:hover::after {
+  width: 100%;
+}
+
+/* ✅ ACTIVO AUTOMÁTICO */
+.menu-bar a.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.menu-bar a.active::after {
+  width: 100%;
 }
 
 
@@ -68,7 +95,7 @@ body {
 .content h2 {
   font-family: 'Playfair Display', serif;
   font-size: 26px;
-  color: #6C63FF; /* ✅ violeta estratégico */
+  color: #6C63FF;
 }
 
 .content p {
@@ -88,136 +115,51 @@ footer {
 }
 
 
-/* =====================================================
-   🔥 GALERÍA NUEVA
-===================================================== */
-
-.galeria-v2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 6.25%;
-  padding: 0 6.25%;
-  margin-top: 30px;
-}
-
-.card-galeria {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card-galeria:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-}
-
-.card-galeria img {
-  width: 100%;
-  display: block;
-  cursor: pointer;
-}
-
-.card-galeria h3 {
-  margin: 12px 0 5px;
-  font-family: 'Playfair Display', serif;
-  color: #333;
-  padding: 0 10px;
-}
-
-.card-galeria p {
-  margin: 0 0 15px;
-  padding: 0 10px;
-  font-size: 14px;
-  color: #777;
-}
-
-
-/* RESPONSIVE GALERÍA */
-.galeria-v2 {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 600px) {
-  .galeria-v2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1000px) {
-  .galeria-v2 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
-/* LIGHTBOX */
-#lightbox-v2 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#lightbox-v2 img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-
-/* =====================================================
-   🔥 BOTÓN WHATSAPP
-===================================================== */
-
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  margin-top: 20px;
-  padding: 12px 22px;
-
-  background: linear-gradient(135deg, #25D366, #1ebe5d); /* ✅ más moderno */
-  color: #fff;
-
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
-
-  transition: all 0.3s ease;
-}
-
-.btn-whatsapp img {
-  width: 18px;
-  height: 18px;
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-}
-
-.btn-whatsapp:active {
-  transform: translateY(0);
-}
-
-
-/* =====================================================
-   🔥 CONTACTO (REDES SOCIALES)
-===================================================== */
-
+/* ===== CONTACTO ===== */
 .social {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.social a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.social img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.social a:hover img {
+  transform: scale(1.1);
+}
+
+.social span {
+  margin-top: 8px;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .social img {
+    width: 55px;
+    height: 55px;
+  }
+}
+``
