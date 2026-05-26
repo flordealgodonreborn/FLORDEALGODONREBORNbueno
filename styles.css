@@ -1,5 +1,5 @@
 /* FUENTES */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;500;600&display=swap');
 
 
 /* ===== AJUSTE GLOBAL ===== */
@@ -11,44 +11,56 @@ body {
   margin: 0;
   background: linear-gradient(to bottom, #ffffff, #fdf6f8);
   font-family: 'Poppins', sans-serif;
+
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 
-/* ===== TOP BAR (EMOCIONAL) ===== */
+/* ===== FRANJA 1 (TÍTULO - PREMIUM TIPOGRÁFICO) ===== */
 .top-bar {
   background: linear-gradient(135deg, #A29BFE, #C7C3FF);
-  padding: 60px 10px;
+  padding: 70px 10px; /* ✅ más aire vertical */
   text-align: center;
 }
 
 .top-bar h1 {
   margin: 0;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+
+  font-size: 42px; /* ✅ tamaño premium */
+  letter-spacing: 4px; /* ✅ tracking óptico perfecto */
+
   color: #ffffff;
-  font-weight: 900;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 3px;
+
+  line-height: 1.2; /* ✅ respiración tipográfica */
 }
 
 
-/* ===== MENU (ACCIÓN + DIRECCIÓN) ===== */
+/* ===== FRANJA 2 (MENÚ) ===== */
 .menu-bar {
   background: linear-gradient(to right, #5A54E8, #6C63FF);
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 12px 10px;
+  padding: 14px 10px;
   flex-wrap: wrap;
+
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .menu-bar a {
   color: #ffffff;
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  letter-spacing: 2px;
+
+  letter-spacing: 2px; /* ✅ más limpio y elegante */
+  font-size: 14px;
+
   position: relative;
   transition: all 0.25s ease;
 }
@@ -65,7 +77,6 @@ body {
   transition: width 0.3s ease;
 }
 
-/* hover */
 .menu-bar a:hover {
   transform: translateY(-2px);
 }
@@ -74,9 +85,8 @@ body {
   width: 100%;
 }
 
-/* ✅ ACTIVO AUTOMÁTICO */
+/* activo */
 .menu-bar a.active {
-  color: #ffffff;
   font-weight: 600;
 }
 
@@ -93,8 +103,9 @@ body {
 }
 
 .content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  letter-spacing: 1px;
   color: #6C63FF;
 }
 
@@ -113,53 +124,3 @@ footer {
   background: transparent;
   margin-top: 40px;
 }
-
-
-/* ===== CONTACTO ===== */
-.social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding: 40px 20px;
-  flex-wrap: wrap;
-
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  max-width: 500px;
-  margin: 40px auto;
-}
-
-.social a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
-
-.social img {
-  width: 65px;
-  height: 65px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.social a:hover img {
-  transform: scale(1.1);
-}
-
-.social span {
-  margin-top: 8px;
-}
-
-/* responsive */
-@media (max-width: 600px) {
-  .social img {
-    width: 55px;
-    height: 55px;
-  }
-}
-``
