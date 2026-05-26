@@ -18,29 +18,46 @@ body {
 }
 
 
-/* ===== FRANJA 1 (TÍTULO - PREMIUM TIPOGRÁFICO) ===== */
+/* ===== FRANJA 1 (HEADER PREMIUM) ===== */
 .top-bar {
-  background: linear-gradient(135deg, #A29BFE, #C7C3FF);
-  padding: 70px 10px; /* ✅ más aire vertical */
+  background: linear-gradient(135deg, #5A54E8 0%, #7B74F2 45%, #D6D2FF 100%);
+  padding: 70px 10px;
   text-align: center;
+  position: relative;
 }
 
+/* capa de profundidad (pro) */
+.top-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.08) 40%,
+    rgba(255,255,255,0.05) 100%
+  );
+}
+
+/* título */
 .top-bar h1 {
-  margin: 0;
+  position: relative;
+  z-index: 1;
 
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
 
-  font-size: 42px; /* ✅ tamaño premium */
-  letter-spacing: 4px; /* ✅ tracking óptico perfecto */
+  font-size: 44px;
+  letter-spacing: 5px;
+  line-height: 1.2;
 
   color: #ffffff;
 
-  line-height: 1.2; /* ✅ respiración tipográfica */
+  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
 
-/* ===== FRANJA 2 (MENÚ) ===== */
+/* ===== FRANJA 2 (MENÚ CON DIRECCIÓN) ===== */
 .menu-bar {
   background: linear-gradient(to right, #5A54E8, #6C63FF);
   display: flex;
@@ -58,14 +75,14 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
 
-  letter-spacing: 2px; /* ✅ más limpio y elegante */
+  letter-spacing: 2px;
   font-size: 14px;
 
   position: relative;
   transition: all 0.25s ease;
 }
 
-/* línea animada */
+/* línea animada (flujo visual) */
 .menu-bar a::after {
   content: "";
   position: absolute;
@@ -85,7 +102,7 @@ body {
   width: 100%;
 }
 
-/* activo */
+/* estado activo */
 .menu-bar a.active {
   font-weight: 600;
 }
@@ -104,7 +121,7 @@ body {
 
 .content h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 30px;
+  font-size: 32px;
   letter-spacing: 1px;
   color: #6C63FF;
 }
@@ -124,3 +141,53 @@ footer {
   background: transparent;
   margin-top: 40px;
 }
+
+
+/* ===== CONTACTO ===== */
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.social a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.social img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.social a:hover img {
+  transform: scale(1.1);
+}
+
+.social span {
+  margin-top: 8px;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .social img {
+    width: 55px;
+    height: 55px;
+  }
+}
+``
