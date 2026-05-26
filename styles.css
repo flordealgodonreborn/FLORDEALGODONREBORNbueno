@@ -20,22 +20,25 @@ body {
 
 /* ===== FRANJA 1 (HEADER PREMIUM) ===== */
 .top-bar {
-  background: linear-gradient(135deg, #5A54E8 0%, #7B74F2 45%, #D6D2FF 100%);
+  background: linear-gradient(135deg, #4F49E0 0%, #6C63FF 40%, #BDB8FF 100%);
   padding: 70px 10px;
   text-align: center;
   position: relative;
 }
 
+
 /* capa de profundidad (pro) */
+
 .top-bar::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
+  background: radial-gradient(
+    ellipse at center,
     rgba(0,0,0,0.15) 0%,
     rgba(0,0,0,0.08) 40%,
-    rgba(255,255,255,0.05) 100%
+    rgba(0,0,0,0.02) 70%,
+    transparent 100%
   );
 }
 
@@ -47,14 +50,14 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
 
-  font-size: 44px;
+  font-size: 46px;
   letter-spacing: 5px;
-  line-height: 1.2;
 
   color: #ffffff;
 
-  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  text-shadow: 0 4px 10px rgba(0,0,0,0.35);
 }
+
 
 
 /* ===== FRANJA 2 (MENÚ CON DIRECCIÓN) ===== */
