@@ -1,4 +1,5 @@
 /* FUENTES */
+/* FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;500;600&display=swap');
 
 
@@ -9,7 +10,7 @@ html, body {
 
 body {
   margin: 0;
-  background: linear-gradient(to bottom, #ffffff, #fdf6f8);
+  background: #ffffff;
   font-family: 'Poppins', sans-serif;
 
   display: flex;
@@ -18,31 +19,16 @@ body {
 }
 
 
-/* ===== HEADER PREMIUM ===== */
+/* ===== HEADER (MARRÓN CLARO) ===== */
 .top-bar {
-  background:#E8D5C0
+  background: #E8D5C0; /* ✅ marrón claro */
   padding: 70px 10px;
   text-align: center;
-  position: relative;
-}
-
-/* profundidad visual */
-.top-bar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0,0,0,0.18) 0%,
-    rgba(0,0,0,0.08) 40%,
-    transparent 100%
-  );
 }
 
 /* título */
 .top-bar h1 {
-  position: relative;
-  z-index: 1;
+  margin: 0;
 
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
@@ -50,22 +36,18 @@ body {
   font-size: 46px;
   letter-spacing: 5px;
 
-  color: #ffffff;
-
-  text-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  color: #3D2A1A; /* ✅ marrón oscuro elegante */
 }
 
 
-/* ===== MENÚ (ACCIÓN + CLIC) ===== */
+/* ===== MENÚ (MARRÓN OSCURO) ===== */
 .menu-bar {
-  background: linear-gradient(to right, #3F3ACF, #5A54E8);
+  background: #8C5E3C; /* ✅ marrón más oscuro */
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 14px 10px;
   flex-wrap: wrap;
-
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
 .menu-bar a {
@@ -95,8 +77,8 @@ body {
 
 /* hover */
 .menu-bar a:hover {
-  transform: translateY(-2px) scale(1.05);
-  color: #E0DEFF;
+  transform: translateY(-2px);
+  color: #f4e7da;
 }
 
 .menu-bar a:hover::after {
@@ -124,7 +106,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 32px;
   letter-spacing: 1px;
-  color: #6C63FF;
+  color: #8C5E3C;
 }
 
 .content p {
@@ -143,7 +125,7 @@ body {
   margin-top: 25px;
   padding: 14px 28px;
 
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  background: #25D366;
   color: #ffffff;
 
   border-radius: 30px;
