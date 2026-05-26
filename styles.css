@@ -18,26 +18,23 @@ body {
 }
 
 
-/* ===== FRANJA 1 (HEADER PREMIUM) ===== */
+/* ===== HEADER PREMIUM ===== */
 .top-bar {
-  background: linear-gradient(135deg, #4F49E0 0%, #6C63FF 40%, #BDB8FF 100%);
+  background: linear-gradient(135deg, #4F49E0 0%, #6C63FF 35%, #BDB8FF 100%);
   padding: 70px 10px;
   text-align: center;
   position: relative;
 }
 
-
-/* capa de profundidad (pro) */
-
+/* profundidad visual */
 .top-bar::before {
   content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.18) 0%,
     rgba(0,0,0,0.08) 40%,
-    rgba(0,0,0,0.02) 70%,
     transparent 100%
   );
 }
@@ -59,17 +56,16 @@ body {
 }
 
 
-
-/* ===== FRANJA 2 (MENÚ CON DIRECCIÓN) ===== */
+/* ===== MENÚ (ACCIÓN + CLIC) ===== */
 .menu-bar {
-  background: linear-gradient(to right, #5A54E8, #6C63FF);
+  background: linear-gradient(to right, #3F3ACF, #5A54E8);
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 14px 10px;
   flex-wrap: wrap;
 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
 .menu-bar a {
@@ -85,27 +81,29 @@ body {
   transition: all 0.25s ease;
 }
 
-/* línea animada (flujo visual) */
+/* línea animada */
 .menu-bar a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -6px;
   width: 0%;
   height: 2px;
   background: #ffffff;
   transition: width 0.3s ease;
 }
 
+/* hover */
 .menu-bar a:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
+  color: #E0DEFF;
 }
 
 .menu-bar a:hover::after {
   width: 100%;
 }
 
-/* estado activo */
+/* activo */
 .menu-bar a.active {
   font-weight: 600;
 }
@@ -132,6 +130,45 @@ body {
 .content p {
   color: #555;
   font-size: 16px;
+}
+
+
+/* ===== BOTÓN CTA WHATSAPP ===== */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 25px;
+  padding: 14px 28px;
+
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: #ffffff;
+
+  border-radius: 30px;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+
+  transition: all 0.25s ease;
+}
+
+.btn-cta img {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
 }
 
 
@@ -186,11 +223,11 @@ footer {
   margin-top: 8px;
 }
 
-/* responsive */
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .social img {
     width: 55px;
     height: 55px;
   }
 }
-``
