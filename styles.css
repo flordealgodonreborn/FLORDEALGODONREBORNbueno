@@ -9,11 +9,21 @@ html, body {
 
 body {
   margin: 0;
-  background: #FDF8F3; /* tono blanco-beige del fondo general */
+  background: #FDF8F3; /* tono blanco-beige */
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 
@@ -86,7 +96,7 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  background-color: #FDF8F3; /* mismo tono que el fondo general */
+  background-color: #FDF8F3;
   text-align: center;
   padding: 40px 20px;
 }
@@ -94,16 +104,14 @@ body {
 .hero img {
   width: 100%;
   max-width: 900px;
-  height: auto;
   border-radius: 12px;
-  display: block;
   margin: 0 auto 30px auto;
   object-fit: cover;
 }
 
 .hero-text {
   color: #000;
-  background: #FDF8F3;
+  background: #ffffff;
   padding: 25px 35px;
   border-radius: 12px;
   font-weight: 600;
@@ -172,6 +180,57 @@ body {
 }
 
 
+/* ===== GALERÍA ===== */
+.galeria-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #FDF8F3;
+}
+
+.card-galeria {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-galeria img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.card-galeria h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #8C5E3C;
+  margin-top: 15px;
+}
+
+.card-galeria p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
+
+.card-galeria:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+@media (min-width: 1024px) {
+  .galeria-v2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
@@ -182,54 +241,3 @@ footer {
   margin-top: auto;
 }
 
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 480px) {
-  .top-bar {
-    padding: 40px 10px;
-  }
-
-  .top-bar h1 {
-    font-size: 32px;
-    letter-spacing: 3px;
-  }
-
-  .menu-bar {
-    gap: 20px;
-    padding: 10px;
-  }
-
-  .menu-bar a {
-    font-size: 13px;
-  }
-
-  .hero-text {
-    padding: 18px 22px;
-  }
-
-  .hero-text h2 {
-    font-size: 26px;
-  }
-
-  .hero-text p {
-    font-size: 15px;
-  }
-
-  .content {
-    padding: 30px 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .top-bar h1 {
-    font-size: 38px;
-  }
-
-  .menu-bar {
-    gap: 30px;
-  }
-
-  .hero img {
-    max-width: 100%;
-  }
-}
