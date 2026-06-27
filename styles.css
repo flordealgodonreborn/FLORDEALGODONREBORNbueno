@@ -84,24 +84,18 @@ body {
   width: 100%;
 }
 
-
 /* ===== HERO ===== */
 .hero {
   position: relative;
   width: 100%;
-  height: auto;
-  max-height: 650px;
+  height: 80vh; /* ocupa el 80% de la altura visible */
   overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* recorta sin deformar */
   display: block;
 }
 
@@ -110,13 +104,12 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   text-align: center;
   color: #fff;
-
   background: rgba(0, 0, 0, 0.35);
   padding: 25px 35px;
   border-radius: 12px;
+  max-width: 90%;
 }
 
 .hero-text h2 {
