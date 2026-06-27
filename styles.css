@@ -9,21 +9,15 @@ html, body {
 
 body {
   margin: 0;
-  background: #ffffff;
+  background: #FDF8F3; /* tono blanco-beige del fondo general */
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
-
-/* ===== HEADER (MARRÓN CLARO) ===== */
+/* ===== HEADER ===== */
 .top-bar {
   background: #E8D5C0;
   padding: 70px 10px;
@@ -92,36 +86,29 @@ img {
 
 /* ===== HERO ===== */
 .hero {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  background-color: #E8D5C0;
-  overflow: hidden;
+  background-color: #FDF8F3; /* mismo tono que el fondo general */
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .hero img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 30px auto;
   object-fit: cover;
-  z-index: 1;
 }
 
 .hero-text {
-  position: relative;
-  z-index: 2;
-  text-align: center;
   color: #000;
-  background: rgba(255, 255, 255, 0.6);
+  background: #FDF8F3;
   padding: 25px 35px;
   border-radius: 12px;
-  max-width: 90%;
-  margin: 0 auto;
   font-weight: 600;
-  top: 50%;
-  transform: translateY(-50%);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-text h2 {
@@ -144,7 +131,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 25px;
+  margin-top: 15px;
   padding: 14px 28px;
   background: #25D366;
   color: #ffffff;
@@ -179,51 +166,70 @@ img {
   margin: 0 auto;
 }
 
-.content h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  letter-spacing: 1px;
-  color: #8C5E3C;
-}
-
 .content p {
   color: #555;
   font-size: 16px;
 }
 
 
-/* ===== GALERÍA ===== */
-.galeria-v2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.card-galeria {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  padding: 20px;
+/* ===== FOOTER ===== */
+footer {
   text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 20px;
+  font-size: 13px;
+  color: #888;
+  background: #FDF8F3;
+  margin-top: auto;
 }
 
-.card-galeria img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 40px 10px;
+  }
+
+  .top-bar h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+
+  .menu-bar {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .menu-bar a {
+    font-size: 13px;
+  }
+
+  .hero-text {
+    padding: 18px 22px;
+  }
+
+  .hero-text h2 {
+    font-size: 26px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+  }
+
+  .content {
+    padding: 30px 15px;
+  }
 }
 
-.card-galeria h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  color: #8C5E3C;
-  margin-top: 15px;
-}
+@media (max-width: 768px) {
+  .top-bar h1 {
+    font-size: 38px;
+  }
 
-.card-galeria p {
-  font-size: 14
+  .menu-bar {
+    gap: 30px;
+  }
+
+  .hero img {
+    max-width: 100%;
+  }
+}
