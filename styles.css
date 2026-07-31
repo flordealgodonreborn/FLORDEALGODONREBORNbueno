@@ -39,6 +39,7 @@ img {
   font-size: clamp(28px, 4vw, 46px);
   letter-spacing: clamp(2px, 0.5vw, 5px);
   color: #3D2A1A;
+  white-space: nowrap; /* 🔥 evita que se parta en móviles */
 }
 
 /* ===== MENÚ ADAPTATIVO ===== */
@@ -46,19 +47,24 @@ img {
   background: #8C5E3C;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap; /* 🔥 evita que se parta en móviles */
-  overflow-x: auto; /* 🔥 si no cabe, se desliza horizontalmente */
-  scrollbar-width: none; /* oculta scroll en Firefox */
-  -ms-overflow-style: none; /* oculta scroll en IE */
+  align-items: center; /* 🔥 centra verticalmente SIEMPRE */
+  flex-wrap: nowrap; /* 🔥 evita que se parta en dos líneas */
+  overflow-x: auto; /* 🔥 si no cabe, desliza horizontalmente */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   gap: clamp(10px, 4vw, 40px);
   padding: 14px clamp(10px, 3vw, 40px);
+  min-height: 48px; /* 🔥 evita que la barra se encoja en algunas páginas */
 }
 
 .menu-bar::-webkit-scrollbar {
-  display: none; /* oculta scroll en Chrome/Safari */
+  display: none;
 }
 
 .menu-bar a {
+  display: flex;
+  align-items: center; /* 🔥 centrado vertical perfecto */
+  justify-content: center;
   white-space: nowrap; /* 🔥 evita saltos de línea */
   color: #ffffff;
   text-decoration: none;
@@ -205,71 +211,4 @@ img {
 
 .card-galeria h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(18px, 2vw, 22px);
-  color: #8C5E3C;
-  margin-top: 15px;
-}
-
-.card-galeria p {
-  font-size: clamp(12px, 1.2vw, 14px);
-  color: #555;
-  margin-top: 8px;
-}
-
-.card-galeria:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-
-/* ===== CONTACTO ===== */
-.social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(30px, 6vw, 60px);
-  margin-top: clamp(30px, 6vw, 60px);
-}
-
-.social a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #8C5E3C;
-  font-weight: 600;
-  font-size: clamp(16px, 2vw, 18px);
-  transition: color 0.3s ease;
-}
-
-.social img {
-  width: clamp(60px, 10vw, 100px);
-  height: auto;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
-}
-
-.social img:hover {
-  transform: scale(1.05);
-}
-
-@media (min-width: 768px) {
-  .social {
-    flex-direction: row;
-    justify-content: center;
-    gap: clamp(40px, 6vw, 80px);
-  }
-
-  .social img {
-    width: clamp(60px, 8vw, 80px);
-  }
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: clamp(15px, 3vw, 20px);
-  font-size: clamp(12px, 1.2vw, 13px);
-  color: #888;
-  background: #FDF8F3;
-  margin-top: auto;
-}
+  font-size: clamp
