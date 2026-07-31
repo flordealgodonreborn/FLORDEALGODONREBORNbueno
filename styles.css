@@ -46,18 +46,26 @@ img {
   background: #8C5E3C;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: clamp(15px, 4vw, 40px);
+  flex-wrap: nowrap; /* 🔥 evita que se parta en móviles */
+  overflow-x: auto; /* 🔥 si no cabe, se desliza horizontalmente */
+  scrollbar-width: none; /* oculta scroll en Firefox */
+  -ms-overflow-style: none; /* oculta scroll en IE */
+  gap: clamp(10px, 4vw, 40px);
   padding: 14px clamp(10px, 3vw, 40px);
 }
 
+.menu-bar::-webkit-scrollbar {
+  display: none; /* oculta scroll en Chrome/Safari */
+}
+
 .menu-bar a {
+  white-space: nowrap; /* 🔥 evita saltos de línea */
   color: #ffffff;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   letter-spacing: clamp(0px, 0.3vw, 2px);
-  font-size: clamp(12px, 1.2vw, 16px);
+  font-size: clamp(11px, 1.2vw, 16px);
   position: relative;
   transition: all 0.25s ease;
 }
@@ -265,4 +273,3 @@ footer {
   background: #FDF8F3;
   margin-top: auto;
 }
-
