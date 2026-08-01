@@ -40,7 +40,8 @@
       <p>Textura y sombreado hiperrealista</p>
     </div>
 
-    <div class="card-galeria">
+    <!-- EJEMPLO DE FOTO MARCADA COMO ADOPTADA -->
+    <div class="card-galeria adoptado">
       <img src="imagenes/galeria/reborn3.webp" width="500" height="500" loading="lazy" decoding="async" alt="Bebé reborn terminado">
       <h3>Resultado final</h3>
       <p>Bebé reborn completamente terminado</p>
@@ -67,6 +68,27 @@
   © 2026 Flor de Algodón Reborn. Todos los derechos reservados.
 </footer>
 
-<script src="script.js"></script>
+<!-- Modal para ampliar imágenes -->
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  document.querySelectorAll(".card-galeria img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = () => modal.style.display = "none";
+  modal.onclick = () => modal.style.display = "none";
+</script>
+
 </body>
 </html>
