@@ -268,19 +268,15 @@ body.modal-open {
   justify-content: center;
   text-decoration: none;
   padding: 0;
-  flex-shrink: 0;
-  color: #5A4634;
 }
 
 .social a:hover,
 .social a:focus-visible {
   outline: none;
-  color: #8E7360;
 }
 
-.social img,
-.social svg {
-  width: clamp(40px, 4.8vw, 54px);
+.social img {
+  width: clamp(52px, 7vw, 64px);
   height: auto;
   object-fit: contain;
   display: block;
@@ -445,18 +441,6 @@ footer {
 
   .content {
     padding: 24px 16px 48px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .social {
-    flex-wrap: nowrap;
-    gap: 16px;
-  }
-
-  .social img {
-    width: 48px;
-    height: 48px;
   }
 }
 
