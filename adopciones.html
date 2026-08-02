@@ -87,58 +87,34 @@
   }
 
   async function cargarUltimaImagen() {
-    try {
-      const respuesta = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${galeriaPath}?ref=main`);
-      if (!respuesta.ok) {
-        throw new Error("No se pudo leer la carpeta de la galería desde GitHub");
-      }
+    const urls = [
+      "https://flordealgodonreborn.com/imagenes/galeria/imagenes.json",
+      "https://raw.githubusercontent.com/flordealgodonreborn/FLORDEALGODONREBORNbueno/main/imagenes/galeria/imagenes.json",
+      "imagenes/galeria/imagenes.json"
+    ];
 
-      const entradas = await respuesta.json();
-      const archivos = entradas.filter(entrada =>
-        entrada.type === "file" && extensionesImagen.includes(obtenerExtension(entrada.name))
-      );
-
-      if (!archivos.length) {
-        throw new Error("No hay imágenes en la carpeta de la galería");
-      }
-
-      const detalles = await Promise.all(archivos.map(async (archivo) => {
-        try {
-          const commitsUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=${encodeURIComponent(archivo.path)}&per_page=1`;
-          const respuestaCommits = await fetch(commitsUrl);
-          if (!respuestaCommits.ok) {
-            return { archivo, fecha: 0 };
-          }
-
-          const commits = await respuestaCommits.json();
-          const fecha = commits[0]?.commit?.author?.date ? new Date(commits[0].commit.author.date).getTime() : 0;
-          return { archivo, fecha };
-        } catch (error) {
-          return { archivo, fecha: 0 };
-        }
-      }));
-
-      detalles.sort((a, b) => b.fecha - a.fecha);
-      const ultima = detalles[0];
-
-      if (imagenAdopcion && ultima?.archivo?.download_url) {
-        imagenAdopcion.src = ultima.archivo.download_url;
-        imagenAdopcion.alt = `Imagen subida: ${ultima.archivo.name}`;
-      }
-    } catch (error) {
-      console.error("No se pudo cargar la imagen de adopciones desde GitHub", error);
-
+    for (const url of urls) {
       try {
-        const respuestaLocal = await fetch("imagenes/galeria/imagenes.json");
-        const archivos = await respuestaLocal.json();
+        const respuesta = await fetch(url);
+        if (!respuesta.ok) {
+          continue;
+        }
+
+        const archivos = await respuesta.json();
         const ultima = archivos[archivos.length - 1];
 
         if (imagenAdopcion && ultima) {
-          imagenAdopcion.src = `imagenes/galeria/${ultima}`;
-          imagenAdopcion.alt = `Imagen subida: ${ultima}`;
+          const nombreArchivo = ultima.trim();
+          const rutaImagen = `https://flordealgodonreborn.com/imagenes/galeria/${encodeURIComponent(nombreArchivo)}`;
+          imagenAdopcion.src = rutaImagen;
+          imagenAdopcion.alt = `Imagen subida: ${nombreArchivo}`;
+          imagenAdopcion.onerror = () => {
+            imagenAdopcion.src = `imagenes/galeria/${nombreArchivo}`;
+          };
+          return;
         }
-      } catch (fallbackError) {
-        console.error("No se pudo cargar la imagen de adopciones desde el fallback local", fallbackError);
+      } catch (error) {
+        console.warn("No se pudo cargar el listado de imágenes desde", url, error);
       }
     }
   }
