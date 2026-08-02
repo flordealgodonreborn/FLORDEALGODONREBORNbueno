@@ -105,11 +105,21 @@
 
         if (imagenAdopcion && ultima) {
           const nombreArchivo = ultima.trim();
-          const rutaImagen = `https://flordealgodonreborn.com/imagenes/galeria/${encodeURIComponent(nombreArchivo)}`;
+          let nombreSeleccionado = nombreArchivo;
+
+          if (nombreArchivo.toLowerCase().endsWith('.webp')) {
+            const alternativaJpg = nombreArchivo.replace(/\.webp$/i, '.jpg');
+            const existeAlternativa = archivos.some(item => item.trim().toLowerCase() === alternativaJpg.toLowerCase());
+            if (existeAlternativa) {
+              nombreSeleccionado = alternativaJpg;
+            }
+          }
+
+          const rutaImagen = `https://flordealgodonreborn.com/imagenes/galeria/${encodeURIComponent(nombreSeleccionado)}`;
           imagenAdopcion.src = rutaImagen;
-          imagenAdopcion.alt = `Imagen subida: ${nombreArchivo}`;
+          imagenAdopcion.alt = `Imagen subida: ${nombreSeleccionado}`;
           imagenAdopcion.onerror = () => {
-            imagenAdopcion.src = `imagenes/galeria/${nombreArchivo}`;
+            imagenAdopcion.src = `imagenes/galeria/${nombreSeleccionado}`;
           };
           return;
         }
