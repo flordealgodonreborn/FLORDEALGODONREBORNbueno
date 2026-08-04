@@ -292,7 +292,8 @@ body.modal-open {
   margin: auto;
 }
 
-.adopcion-card {
+.adopcion-card,
+.accesorio-card {
   background: #FFF;
   padding: 20px;
   border-radius: 12px;
@@ -300,7 +301,8 @@ body.modal-open {
   text-align: center;
 }
 
-.adopcion-media {
+.adopcion-media,
+.accesorio-media {
   position: relative;
   margin-bottom: 16px;
   width: 100%;
@@ -309,7 +311,8 @@ body.modal-open {
   margin-right: auto;
 }
 
-.adopcion-media img {
+.adopcion-media img,
+.accesorio-media img {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
@@ -319,7 +322,8 @@ body.modal-open {
   display: block;
 }
 
-.adopcion-badge {
+.adopcion-badge,
+.accesorio-badge {
   position: absolute;
   top: 14px;
   left: 14px;
@@ -334,21 +338,29 @@ body.modal-open {
   z-index: 2;
 }
 
-.adopcion-info {
+.accesorio-badge.agotado {
+  background: rgba(231, 76, 60, 0.96);
+}
+
+.adopcion-info,
+.accesorio-info {
   text-align: left;
 }
 
-.adopcion-info h3 {
+.adopcion-info h3,
+.accesorio-info h3 {
   margin: 0 0 8px;
 }
 
-.adopcion-info p {
+.adopcion-info p,
+.accesorio-info p {
   margin: 0 0 12px;
   padding: 0;
   text-align: left;
 }
 
-.adopcion-detalles {
+.adopcion-detalles,
+.accesorio-detalles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 10px;
@@ -357,7 +369,8 @@ body.modal-open {
   list-style: none;
 }
 
-.adopcion-detalles li {
+.adopcion-detalles li,
+.accesorio-detalles li {
   background: #f8efe7;
   padding: 10px 12px;
   border-radius: 10px;
