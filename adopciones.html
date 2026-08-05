@@ -1,123 +1,39 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bebés Reborn en Adopción | Flor de Algodón Reborn</title>
-  <meta name="description" content="Descubre nuestros bebés reborn en adopción, hechos a mano con realismo extremo.">
-  <link rel="canonical" href="https://flordealgodonreborn.com/adopciones.html">
-  <link rel="stylesheet" href="styles.css">
-</head>
+<div class="adopciones-lista">
 
-<body>
-
-<header class="top-bar">
-  <h1>FLOR DE ALGODÓN REBORN</h1>
-</header>
-
-<nav class="menu-bar">
-  <a href="index.html">INICIO</a>
-  <a href="galeria.html">GALERÍA</a>
-  <a href="adopciones.html">ADOPCIONES</a>
-  <a href="artículos.html">ARTÍCULOS</a>
-  <a href="contacto.html">CONTACTO</a>
-</nav>
-
-<main>
-<section class="content">
-  <h1>Bebés Reborn en adopción</h1>
-
-  <p>
-    En Flor de Algodón Reborn ofrecemos bebés reborn artesanales hechos a mano en España, con un nivel de realismo único.
-  </p>
-
-  <p>
-    Cada bebé reborn es una creación exclusiva, diseñada con amor y cuidando cada detalle para lograr una apariencia y sensación realista.
-  </p>
-
-  <div class="adopciones-lista">
-
-    <!-- 🔥 TARJETA REUTILIZABLE: SOLO CAMBIA EL NOMBRE Y LA IMAGEN SE ACTUALIZA SOLA -->
-    <div class="adopcion-card adoptado-adopciones fade-in">
-      <div class="adopcion-media">
-        <img id="imagen-adopcion-principal" src="" alt="Imagen del bebé reborn adoptado">
-        <span class="adopcion-badge">ADOPTADO</span>
-      </div>
-
-      <div class="adopcion-info">
-        <h3 id="nombre-reborn" data-editable="titulo">CHASE</h3>
-
-        <p data-editable="descripcion">PRECIOSO BEBÉ DE PELITO INJERTADO.</p>
-
-        <ul class="adopcion-detalles">
-          <li><strong>Peso:</strong> <span data-editable="peso">3,2 kg</span></li>
-          <li><strong>Talla:</strong> <span data-editable="talla">52 cm</span></li>
-        </ul>
-      </div>
-
-      <div class="adopcion-info">
-        <h3 id="nombre-reborn" data-editable="titulo">ERIC</h3>
-
-        <p data-editable="descripcion">BEBE DURMIENDO.</p>
-
-        <ul class="adopcion-detalles">
-          <li><strong>Peso:</strong> <span data-editable="peso">2,6 kg</span></li>
-          <li><strong>Talla:</strong> <span data-editable="talla">50 cm</span></li>
-        </ul>
-      </div>
-      
+  <!-- TARJETA 1: CHASE -->
+  <div class="adopcion-card adoptado-adopciones fade-in">
+    <div class="adopcion-media">
+      <img class="imagen-adopcion" data-nombre="CHASE" src="" alt="Bebé reborn adoptado">
+      <span class="adopcion-badge">ADOPTADO</span>
     </div>
 
+    <div class="adopcion-info">
+      <h3 data-editable="titulo">CHASE</h3>
+      <p data-editable="descripcion">PRECIOSO BEBÉ DE PELITO INJERTADO.</p>
+
+      <ul class="adopcion-detalles">
+        <li><strong>Peso:</strong> <span data-editable="peso">3,2 kg</span></li>
+        <li><strong>Talla:</strong> <span data-editable="talla">52 cm</span></li>
+      </ul>
+    </div>
   </div>
 
-</section>
-</main>
+  <!-- TARJETA 2: ERIC -->
+  <div class="adopcion-card adoptado-adopciones fade-in">
+    <div class="adopcion-media">
+      <img class="imagen-adopcion" data-nombre="ERIC" src="" alt="Bebé reborn adoptado">
+      <span class="adopcion-badge">ADOPTADO</span>
+    </div>
 
-<footer>
-  © 2026 Flor de Algodón Reborn. Todos los derechos reservados.
-</footer>
+    <div class="adopcion-info">
+      <h3 data-editable="titulo">ERIC</h3>
+      <p data-editable="descripcion">BEBÉ DURMIENDO.</p>
 
-<!-- Modal -->
-<div id="imgModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content zoom-modal" id="modalImg">
+      <ul class="adopcion-detalles">
+        <li><strong>Peso:</strong> <span data-editable="peso">2,6 kg</span></li>
+        <li><strong>Talla:</strong> <span data-editable="talla">50 cm</span></li>
+      </ul>
+    </div>
+  </div>
+
 </div>
-
-<script>
-  const modal = document.getElementById("imgModal");
-  const modalImg = document.getElementById("modalImg");
-  const closeBtn = document.getElementsByClassName("close")[0];
-  const imagenAdopcion = document.getElementById("imagen-adopcion-principal");
-  const nombreReborn = document.getElementById("nombre-reborn");
-
-  // ⭐ CARGA AUTOMÁTICA DE IMAGEN SEGÚN EL NOMBRE DEL BEBÉ
-  function cargarImagenReborn() {
-    if (!nombreReborn) return;
-
-    const nombre = nombreReborn.textContent.trim().toUpperCase();
-    const rutaWebp = `imagenes/adopciones/${nombre}.webp`;
-    const rutaJpg = `imagenes/adopciones/${nombre}.jpg`;
-
-    imagenAdopcion.src = rutaWebp;
-
-    imagenAdopcion.onerror = () => {
-      imagenAdopcion.src = rutaJpg;
-    };
-  }
-
-  cargarImagenReborn();
-
-  // Modal zoom
-  if (imagenAdopcion) {
-    imagenAdopcion.addEventListener("click", () => {
-      modal.style.display = "block";
-      modalImg.src = imagenAdopcion.src;
-    });
-  }
-
-  closeBtn.onclick = () => modal.style.display = "none";
-  modal.onclick = () => modal.style.display = "none";
-</script>
-
-</body>
-</html>
