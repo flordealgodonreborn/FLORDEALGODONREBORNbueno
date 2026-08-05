@@ -37,22 +37,21 @@
 
   <div class="adopciones-lista">
 
+    <!-- 🔥 TARJETA REUTILIZABLE: SOLO CAMBIA EL NOMBRE Y LA IMAGEN SE ACTUALIZA SOLA -->
     <div class="adopcion-card adoptado-adopciones fade-in">
       <div class="adopcion-media">
-        <img id="imagen-adopcion-principal" src="" alt="Última imagen subida en la galería">
+        <img id="imagen-adopcion-principal" src="" alt="Imagen del bebé reborn adoptado">
         <span class="adopcion-badge">ADOPTADO</span>
       </div>
-      <div class="adopcion-info">
-        <!-- Edita este texto para cambiar el título -->
-        <h3 data-editable="titulo">CHASE</h3>
 
-        <!-- Edita este texto para cambiar la descripción -->
-        <p data-editable="descripcion">PRECIOSO BEBE DE OELITO INGERTADO.</p>
+      <div class="adopcion-info">
+        <h3 id="nombre-reborn" data-editable="titulo">CHASE</h3>
+
+        <p data-editable="descripcion">PRECIOSO BEBÉ DE PELITO INJERTADO.</p>
 
         <ul class="adopcion-detalles">
-          <!-- Edita estos valores si quieres cambiar peso o talla -->
           <li><strong>Peso:</strong> <span data-editable="peso">3,2 kg</span></li>
-          <li><strong>Talla:</strong> <span data-editable="talla">50 cm</span></li>
+          <li><strong>Talla:</strong> <span data-editable="talla">52 cm</span></li>
         </ul>
       </div>
     </div>
@@ -77,58 +76,26 @@
   const modalImg = document.getElementById("modalImg");
   const closeBtn = document.getElementsByClassName("close")[0];
   const imagenAdopcion = document.getElementById("imagen-adopcion-principal");
-  const repoOwner = "flordealgodonreborn";
-  const repoName = "FLORDEALGODONREBORNbueno";
-  const galeriaPath = "imagenes/galeria";
-  const extensionesImagen = [".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".svg", ".avif"];
+  const nombreReborn = document.getElementById("nombre-reborn");
 
-  function obtenerExtension(nombre) {
-    return nombre.slice(nombre.lastIndexOf("."))?.toLowerCase() || "";
+  // ⭐ CARGA AUTOMÁTICA DE IMAGEN SEGÚN EL NOMBRE DEL BEBÉ
+  function cargarImagenReborn() {
+    if (!nombreReborn) return;
+
+    const nombre = nombreReborn.textContent.trim().toUpperCase();
+    const rutaWebp = `imagenes/adopciones/${nombre}.webp`;
+    const rutaJpg = `imagenes/adopciones/${nombre}.jpg`;
+
+    imagenAdopcion.src = rutaWebp;
+
+    imagenAdopcion.onerror = () => {
+      imagenAdopcion.src = rutaJpg;
+    };
   }
 
-  async function cargarUltimaImagen() {
-    const urls = [
-      "https://flordealgodonreborn.com/imagenes/galeria/imagenes.json",
-      "https://raw.githubusercontent.com/flordealgodonreborn/FLORDEALGODONREBORNbueno/main/imagenes/galeria/imagenes.json",
-      "imagenes/galeria/imagenes.json"
-    ];
+  cargarImagenReborn();
 
-    for (const url of urls) {
-      try {
-        const respuesta = await fetch(url);
-        if (!respuesta.ok) {
-          continue;
-        }
-
-        const archivos = await respuesta.json();
-        const ultima = archivos[archivos.length - 1];
-
-        if (imagenAdopcion && ultima) {
-          const nombreArchivo = ultima.trim();
-          let nombreSeleccionado = nombreArchivo;
-
-          if (nombreArchivo.toLowerCase().endsWith('.webp')) {
-            const alternativaJpg = nombreArchivo.replace(/\.webp$/i, '.jpg');
-            const existeAlternativa = archivos.some(item => item.trim().toLowerCase() === alternativaJpg.toLowerCase());
-            if (existeAlternativa) {
-              nombreSeleccionado = alternativaJpg;
-            }
-          }
-
-          const rutaImagen = `https://flordealgodonreborn.com/imagenes/galeria/${encodeURIComponent(nombreSeleccionado)}`;
-          imagenAdopcion.src = rutaImagen;
-          imagenAdopcion.alt = `Imagen subida: ${nombreSeleccionado}`;
-          imagenAdopcion.onerror = () => {
-            imagenAdopcion.src = `imagenes/galeria/${nombreSeleccionado}`;
-          };
-          return;
-        }
-      } catch (error) {
-        console.warn("No se pudo cargar el listado de imágenes desde", url, error);
-      }
-    }
-  }
-
+  // Modal zoom
   if (imagenAdopcion) {
     imagenAdopcion.addEventListener("click", () => {
       modal.style.display = "block";
@@ -138,8 +105,6 @@
 
   closeBtn.onclick = () => modal.style.display = "none";
   modal.onclick = () => modal.style.display = "none";
-
-  cargarUltimaImagen();
 </script>
 
 </body>
