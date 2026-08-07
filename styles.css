@@ -50,7 +50,7 @@ a {
 
 /* ===== MENÚ ===== */
 .menu-bar {
-  background: #8E7360;
+  background: #6E5848; /* Fondo más oscuro, contraste accesible */
   padding: 16px 20px;
   text-align: center;
   display: flex;
