@@ -327,8 +327,8 @@ body.modal-open {
   position: absolute;
   top: 14px;
   left: 14px;
-  background: rgba(46, 204, 113, 0.95);
-  color: white;
+  background: #2ECC71; /* Verde sólido accesible */
+  color: #FFFFFF;
   padding: 8px 14px;
   font-weight: 700;
   border-radius: 999px;
@@ -339,8 +339,9 @@ body.modal-open {
 }
 
 .accesorio-badge.agotado {
-  background: rgba(231, 76, 60, 0.96);
+  background: #E74C3C; /* Rojo sólido accesible */
 }
+
 
 .adopcion-info,
 .accesorio-info {
